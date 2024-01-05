@@ -1,1 +1,19 @@
-#!/usr/bin/node
+export default class Pricing {
+  /* eslint-disable no-underscore-dangle */
+  constructor(amount, currency) {
+    this.amount = amount;
+    this.currency = currency;
+  }
+
+  get amount() { return this._amount; }
+
+  get currency() { return this._currency; }
+
+  set amount(amount) { this._amount = amount; }
+
+  set currency(currency) { this._currency = currency; }
+
+  displayFullPrice() { return `${this.amount} ${this.currency.name} (${this.currency.code})`; }
+
+  static convertPrice(amount, conversionRate) { return amount * conversionRate; }
+}
