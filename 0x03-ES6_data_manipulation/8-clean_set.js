@@ -1,12 +1,15 @@
 #!/usr/bin/node
 export default function cleanSet(set, startString) {
-  if (typeof startString !== 'string' || !startString) {
+  if (!startString || typeof startString !== 'string') 
+  {
     return '';
   }
 
-  const filteredValues = Array.from(set)
-    .filter(value => value && value.startsWith(startString))
-    .map(value => value.slice(startString.length));
-
-  return filteredValues.join('-');
+  const newString = [];
+  set.forEach((value) => {
+    if (value && value.startsWith(startString)) {
+      newString.push(value.slice(startString.length));
+    }
+  });
+  return newString.join('-');
 }
