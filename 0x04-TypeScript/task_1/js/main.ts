@@ -19,12 +19,3 @@ const director1: Directors = {
   numberOfReports: 17,
 };
 console.log(director1);
-
-const teacher3: Teacher = {
-  firstName: 'John',
-  lastName: 'Doe',
-  fullTimeEmployee: false,
-  location: 'London',
-  contract: false,
-};
-console.log(teacher3);
