@@ -1,15 +1,10 @@
 #!/usr/bin/node
-export default function cleanSet(set, startString) {
-  if (!startString || typeof startString !== 'string') 
-  {
+export default function cleanSet(duSet, xString) {
+  if (!duSet || typeof xString !== 'string' || !(duSet instanceof Set) || !xString) {
     return '';
   }
-
-  const newString = [];
-  set.forEach((value) => {
-    if (value && value.startsWith(startString)) {
-      newString.push(value.slice(startString.length));
-    }
-  });
-  return newString.join('-');
+  return Array.from(duSet)
+    .filter((y) => y && y.startsWith(xString))
+    .map((y) => y.replace(xString, ''))
+    .join('-');
 }
