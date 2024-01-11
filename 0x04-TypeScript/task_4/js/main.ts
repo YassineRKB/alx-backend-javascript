@@ -1,0 +1,16 @@
+export const cpp: Subjects.Cpp = new Subjects.Cpp();
+export const react: Subjects.React = new Subjects.React();
+export const java: Subjects.Java = new Subjects.Java();
+export const cTeacher: Subjects.Teacher = { firstName: 'Guillaume', lastName: 'Salva', experienceTeachingC: 10 };
+cpp.setTeacher = cTeacher;
+react.setTeacher = cTeacher;
+java.setTeacher = cTeacher;
+console.log('C++');
+console.log(cpp.getRequirements());
+console.log(cpp.getAvailableTeacher());
+console.log('React');
+console.log(react.getRequirements());
+console.log(react.getAvailableTeacher());
+console.log('Java');
+console.log(java.getRequirements());
+console.log(java.getAvailableTeacher());
