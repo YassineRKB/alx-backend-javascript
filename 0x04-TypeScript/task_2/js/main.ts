@@ -50,3 +50,11 @@ export function executeWork(employee: DirectorInterface | TeacherInterface): str
   if (isDirector(employee)) return employee.workDirectorTasks();
   return employee.workTeacherTasks();
 }
+
+export type Subjects = ('Math' | 'History');
+export function teachClass(todayClass: Subjects): string {
+  let result = '';
+  if (todayClass === 'Math') result = 'Teaching Math';
+  if (todayClass === 'History') result = 'Teaching History';
+  return result;
+}
