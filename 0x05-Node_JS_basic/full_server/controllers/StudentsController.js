@@ -1,7 +1,7 @@
 const readDatabase = require('../utils');
 
 class StudentsController {
-    static getStudents(request, response) {
+    static getAllStudents(request, response) {
         response.statusCode = 200;
         response.setHeader('Content-Type', 'text/plain');
         response.write('This is the list of our students\n');
@@ -14,7 +14,7 @@ class StudentsController {
           res.end();
         });
     }
-    static getStudentsMajor(request, response) {
+    static getAllStudentsByMajor(request, response) {
         response.statusCode = 200;
         response.setHeader('Content-Type', 'text/plain');
         let { major } = request.params;
