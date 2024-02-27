@@ -4,9 +4,7 @@ async function countStudents(path) {
   return new Promise((resolve, reject) => {
     fs.readFile(path, 'utf8')
       .then((database) => {
-        const students = database.split('\n').filter(
-          (line) => line.trim() !== ''
-        );
+        const students = database.split('\n').filter((line) => line.trim() !== '');
         console.log(`Number of students: ${students.length - 1}`);
         const fields = {};
         students.slice(1).forEach((student) => {
