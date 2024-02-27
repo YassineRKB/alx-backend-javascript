@@ -1,12 +1,10 @@
-import express from 'express';
+const express = require('express');
 
 const app = express();
-const indexRouter = require('./routes/index');
+const routes = require('./routes/index');
 const port = 1245;
 
-app.listen(port);
-app.use('/', indexRouter);
-app.use('/students', indexRouter);
-app.use('/students/:major', indexRouter);
+app.use('/', routes);
 
-export default app;
+app.listen(port);
+module.exports = app;
