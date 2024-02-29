@@ -12,7 +12,7 @@ describe('sendPaymentRequestToApi', () => {
         sendPaymentRequestToApi(100, 20)
         sinon.assert.calledWith(ispy, 'SUM', 100, 20)
         sinon.assert.calledWith(morgan, 'The total is: 10');
-        stubtub.restore()
+        ispy.restore()
         morgan.restore()
     })
 })
